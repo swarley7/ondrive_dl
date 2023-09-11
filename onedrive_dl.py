@@ -14,8 +14,6 @@ from PyInquirer import prompt
 from prompt_toolkit.validation import Validator, ValidationError
 
 
-regex = re.compile(r'||\((.*)\)$')
-
 store_metadata = True
 
 parser = argparse.ArgumentParser(description='Description of your program')
@@ -33,15 +31,6 @@ logging.basicConfig(format=f'[%(asctime)s]_[IP:{wanip}]: %(message)s',     handl
         logging.StreamHandler() # log stderr
     ]
     , encoding='utf-8', level=logging.INFO)
-
-class NumberValidator(Validator):
-
-    def validate(self, document):
-        try:
-            int(document.text)
-        except ValueError:
-            raise ValidationError(message="Please enter a number",
-                                  cursor_position=len(document.text))
 
 
 def menu():
