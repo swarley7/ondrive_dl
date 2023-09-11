@@ -75,3 +75,7 @@ TO:
 ```python
     from collections.abc import Mapping
 ```
+
+# Other things
+
+Note: this is experimental and flaky. It's provided as-is without any warranty. Use at your own risk.
